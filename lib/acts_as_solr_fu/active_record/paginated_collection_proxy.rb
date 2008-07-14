@@ -1,6 +1,8 @@
 class ActsAsSolrFu::ActiveRecord::PaginatedCollectionProxy
   include Enumerable
   
+  attr_reader :per_page, :current_page, :search_results
+  
   def initialize(search_results, current_page, per_page)
     @search_results, @current_page, @per_page = search_results, current_page, per_page
   end
