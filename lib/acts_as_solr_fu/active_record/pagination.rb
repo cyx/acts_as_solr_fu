@@ -15,7 +15,7 @@ module ActsAsSolrFu
           args << options
           
           if args.first.blank?
-            paginate :per_page => per_page, :page => page
+            return nil
           else
             ActsAsSolrFu::ActiveRecord::PaginatedCollectionProxy.new(find_by_solr(*args), page, per_page)
           end
