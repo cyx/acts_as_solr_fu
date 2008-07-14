@@ -12,6 +12,14 @@ class ActsAsSolrFu::ActiveRecord::PaginatedCollectionProxy
   def current_page
     @current_page
   end
+
+  def previous_page
+    @current_page - 1
+  end
+  
+  def next_page
+    @current_page + 1
+  end
   
   def total_entries
     @search_results.total
