@@ -1,13 +1,17 @@
 ActsAsSolrFu
 ============
 
-Introduction goes here.
-
+This is basically meant to add a PaginatedCollectionProxy for solr results.
 
 Example
 =======
 
-Example goes here.
+Basic usage looks like this:
 
+Article.paginate_by_solr "Presidental Candidates", :facets => { ... },
+  :per_page => 10, :page => 1
 
-Copyright (c) 2007 [name of plugin creator], released under the MIT license
+All of the options passed in paginate_by_solr are just passed through to 
+find_by_solr with the exception of per_page and page.
+
+Copyright (c) 2007 [Cyril David], released under the MIT license
